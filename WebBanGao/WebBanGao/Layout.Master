@@ -4,8 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="Resource/Source/style.css">
-
+    <link rel="stylesheet" href="Resource/Source/style.css"/>
 
 
     <title>Gạo Sạch | Mua Bán Gạo Trực Tuyến</title>
@@ -57,22 +56,31 @@
                 </li>
                 <li class="nav-item"><a href="../Pages/TinTuc.aspx">TIN TỨC</a>
                     <ul class="sub-menu">
-                        <li><a href="../Pages/TinNganhGao.aspx">Tin Ngành Gạo</a></li>
-                        <li><a href="../Pages/SucKhoe.aspx">Sức Khỏe</a></li>
-                        <li><a href="../Pages/NongNghiep.aspx">Tin Tức Nông Nghiệp</a></li>
-                        <li><a href="../Pages/LamDep.aspx">Làm đẹp</a></li>
+                        <% for(int i=0 ; i<ListDanhmucTinTuc.Count ;i++){
+                                %>
+                        <li><a href="../Pages/TinNganhGao.aspx"><%=ListDanhmucTinTuc[i].TenDanhMucTT %></a></li>
+                        <% }%>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="../Pages/KhuyenMai.aspx">KHUYẾN MÃI</a></li>
+                <li class="nav-item"><a href="../Pages/KhuyenMai.aspx">KHUYẾN MÃI</a>
+                    <ul class="sub-menu">
+
+                        <% for (int a = 0; a < ListDanhMucKhuyenmai.Count; a++)
+                           {
+                                %>
+                        <li><a href="#"><%=ListDanhMucKhuyenmai[a].TenDanhMuc %></a></li>
+                        <% }%>
+
+                    </ul>
+                </li>
                 <li class="nav-item"><a href="../Pages/SanPham.aspx">SẢN PHẨM</a>
                     <ul class="sub-menu">
-                        <li><a href="../Pages/GaoDeo.aspx">Gạo dẻo</a></li>
-                        <li><a href="../Pages/GaoDeoMem.aspx">Gạo dẻo mềm</a></li>
-                        <li><a href="../Pages/GaoDeoThom.aspx">Gạo dẻo thơm</a></li>
-                        <li><a href="../Pages/GaoNoXop.aspx">Gạo nở xốp</a></li>
-                        <li><a href="../Pages/GaoNoMem.aspx">Gạo nở mềm</a></li>
-                        <li><a href="../Pages/GaoThom.aspx">Gạo thơm</a></li>
-                        <li><a href="../Pages/GaoNep.aspx">Gạo nếp</a></li>
+
+                        <% for(int a=0 ; a<ListDanhmucSp.Count ;a++){
+                                %>
+                        <li><a href="../Pages/TinNganhGao.aspx"><%=ListDanhmucSp[a].TenDanhMuc %></a></li>
+                        <% }%>
+
                     </ul>
                 </li>
                 <li class="nav-item"><a href="../Pages/LienHe.aspx">LIÊN HỆ</a></li>

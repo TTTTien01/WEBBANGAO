@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,6 +61,11 @@
     <Content Include="Layout.Master" />
     <Content Include="LayoutTinTuc.Master" />
     <Content Include="LayoutSP.Master" />
+    <Content Include="QLBanGao.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLBanGao.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -451,6 +457,11 @@
       <DependentUpon>XiDeo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLBanGao.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanGao.dbml</DependentUpon>
+    </Compile>
     <Compile Include="userUI\G404.ascx.cs">
       <DependentUpon>G404.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -675,6 +686,14 @@
     <Compile Include="userUI\XiDeo.ascx.designer.cs">
       <DependentUpon>XiDeo.ascx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QLBanGao.dbml.layout">
+      <DependentUpon>QLBanGao.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
