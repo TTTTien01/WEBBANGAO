@@ -18,12 +18,12 @@
     display: inline-block;
 }
 
-.text-center {
+.text-center1 {
     height: 300px;
     width: 100%;
 }
 
-.text-center #img1 {
+.text-center1 #img1 {
     position: relative;
     left: 50px;
     height: 300px;
@@ -696,12 +696,16 @@
     outline: none;
     border: none;
     border-radius: 3px;
+    background-image: -webkit-linear-gradient(top, rgb(226, 238, 175) 3%, rgb(188, 216, 77) 3%, rgb(144, 176, 38) 100%);
+
   }
   
   .product-shopping-cart > form > button > span {
     display: inline-block;
     padding: 15px 0;
     color: white;
+    background-image: -webkit-linear-gradient(top, rgb(226, 238, 175) 3%, rgb(188, 216, 77) 3%, rgb(144, 176, 38) 100%);
+
   }
   
   .product-shopping-cart > form > button:hover,
@@ -1299,7 +1303,7 @@ html[xmlns] .clearfix {
 }
 .box-lienhe input{
 	
-	 border: 1px solid rgb(223, 215, 215);
+	border: 1px solid rgb(223, 215, 215);
     width: 100%;
     padding: 20px;/*kích thước đc cộng ra ngoài*/
     box-sizing: border-box;/*kích thước thẻ không thay đổi => giải quyết thêm padding*/
@@ -1332,86 +1336,105 @@ html[xmlns] .clearfix {
     position:relative;
    
 }
-/*====================GIỎ HÀNG=========================*/
-.popup-container {
-    
-    position: relative;
-    top: 50px;
-    left: 900px;
-    
+
+
+/*Chitiet tintuc*/
+.adv{
+    width: 800px;
+    height: 500px;
+    margin-left: 500px;
 }
 
-.popup-container>.popup {
-    width: 1000px;
-    height: 600px;
-    background-color: rgb(253, 253, 245);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 20px auto;
-    box-shadow: 0 5px 10px rgb(192, 191, 191);/*x y độ loe*/
-
+/*GIỎ HÀNG MỚI*/
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
-
-.GHang tr th {
-    width: 100px;
-    height: 40px;
-    border: 1px solid;
-}
-.popup {
-    position: relative;
-    right: 900px;
-}
-
-.title{
-    color: #1877f2;
-    font-size: 22pt;
-    text-align: center;
-    margin-top: 40px;
-}
-.box{
-    width: 320px;/*ứng vs màng hình đt nhỏ nhất*/
-    margin: auto;/*cho thẻ div vào giữa*/
-    border-radius: 6px;
+.product-items {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ddd;
     padding: 12px;
-    border: 1px solid rgb(223, 215, 215);
-    box-shadow: 0 5px 10px rgb(192, 191, 191);/*x y độ loe*/
-    margin-top: 10px;
-    position: relative;
-    left: 300px;
 }
-.box-item{
-    margin-top:0px ;
+.product-item {
+    width: 19%;
+    background-color: #fff;
+    padding: 12px;
+    text-align: center;
 }
-.box-item input{
-    border: 1px solid rgb(223, 215, 215);
+.product-item img {
     width: 100%;
-    padding: 15px;/*kích thước đc cộng ra ngoài*/
-    box-sizing: border-box;/*kích thước thẻ không thay đổi => giải quyết thêm padding*/
-    border-radius: 6px;
-}
-.box-item button{
-    border: 1px solid rgb(184, 179, 179);
-    width: 100%;
-    padding: 15px;/*kích thước đc cộng ra ngoài*/
-    box-sizing: border-box;/*kích thước thẻ không thay đổi => giải quyết thêm padding*/
-    border-radius: 6px;
-    background-color: #1877f2;
-    color: white;
-    font-weight: bold;/*in đậm chữ*/
-    font-size: 16px;
-    cursor: pointer;/*con trỏ chuột hình bàn tay*/
-}
-/*selecter ảo*/
-.box > .box-item :first-child{ /*con đầu tiên*/
-        margin-bottom: 20px;
-}
-.box > .box-item :last-child{/*con cuối*/
     margin-bottom: 20px;
 }
-.bgSanPham > .slideshow-container img {
-    width: 800px;
-    height: 300px;
-    position: absolute;
-    top: 442px;
-    left: 500px;
+.product-item-text {
+    display: flex;
+    justify-content: space-between;
 }
+.product-item button {
+    margin-top: 12px;
+    height: 30px;
+    padding: 0 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.product-item button:hover {
+    background-color: tomato;
+
+}
+/* -----------------------------------cart----------------------- */
+.cart {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+}
+.cart h2 {
+    margin-bottom: 20px;
+}
+.cart  table {
+    width: 100%;
+}
+.cart  table thead tr th:first-child {
+    text-align: left;
+}
+.cart  table tr td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+.cart  table thead tr th:last-child {
+    text-align: right;
+}
+.cart  table tbody tr td:last-child {
+    text-align: right;
+}
+/* ------------------------- */
+.cart button {
+    margin-top: 12px;
+    height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+     background-color: tomato;
+}
+.cart {
+    position: fixed;
+    height: 100vh;
+    width: 400px;
+    right: 0;
+    top: 0;
+    background-color: rgb(221, 195, 195);
+    padding: 12px 20px;
+    overflow-y: scroll;
+    right: -100%;
+    transition: all 0.3s ease;
+}
+.cart i {
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.cart-icon i {
+    cursor: pointer;
+}                      

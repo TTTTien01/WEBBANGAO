@@ -7,9 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebBanGao.userUI {
+namespace WebBanGao.Pages {
     
     
-    public partial class GioHang {
+    public partial class ChiTietSP {
+        
+        /// <summary>
+        /// ChiTietSP1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::WebBanGao.userUI.ChiTietSP ChiTietSP1;
     }
 }

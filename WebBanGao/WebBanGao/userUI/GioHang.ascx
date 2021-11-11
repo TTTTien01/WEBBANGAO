@@ -1,53 +1,129 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="GioHang.ascx.cs" Inherits="WebBanGao.userUI.GioHang" %>
-<h3 style="color: white; cursor: pointer; font-size: 18px;">GIỎ HÀNG</h3>
 
-<div id="Popup" class="popup-container">
-    <div class="popup">
-        <div class="GHang" style="position:absolute">
-            <h1>Giỏ Hàng</h1>
+<section class="cart1">
+        <i class="fas fa-times"></i>
+        <h2>Cart</h2>
+        <form action="">
             <table>
-                <tr>
-                    <th>STT</th>
-                    <th>Mặt hàng</th>
-                    <th>Số lượng</th>
-                    <th>Giá</th>
-                    <th>Tổng tiền</th>
-                    <th>Xóa</th>
-                </tr>
-                <tbody id="giohang">
+                <thead>
                     <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>SL</th>
+                        <th>Chọn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="display: flex;align-items: center;"><img style="width:70px" src="../Resource/Images/a2.jpg" alt="">Gạo 1 </td>
+                        <td><p><span>320.000</span><sup>đ</sup></p></td>
+                        <td><input style="width: 30px;outline: none;" type="number" value="1" min="1"></td>
+                        <td style="cursor: pointer;">Xóa</td>
                     </tr>
                 </tbody>
-                <tr>
-                    <th colspan="5">Tổng đơn hàng</th>
-                    <th colspan="2"><span id="tongdonhang">00000</span>đ</th>
-                </tr>
             </table>
-        </div>
-        
-       
-        <div class="box">
-            <div class="box-item">
-                <h1 class="title">Thông tin đặt hàng</h1>  
+            <div style="text-align: right;" class="price-total">
+                <p style="font-weight: bold;">Tổng tiền:<span>0</span><sup>đ</sup></p>
             </div>
-            <div class="box-item">
-                <input type="text" class="control" placeholder="Họ tên">
-            </div>
-            <div class="box-item">
-                <input type="text" class="control" placeholder="Số điện thoại">
-            </div>
-            <div class="box-item">
-                <input type="text" class="control" placeholder="Email">
-            </div>
-            <div class="box-item">
-                <input type="password" class="control" placeholder="Địa chỉ giao hàng">
-            </div>
-            <div class="box-item">
-                <input type="text" class="control" placeholder="Ghi chú khác">
-            </div>
-            <div class="box-item">
-                <button type="button">Đặt hàng</button>
-            </div>
-        </div>
-    </div>
-</div>
+            <button>Đặt ngay</button>
+        </form>
+    </section>
+<script >
+        const btn = document.querySelectorAll("button")
+
+        btn.forEach(function (button, index) {
+            button.addEventListener("click", function (event) {
+                {
+                    var btnItem = event.target
+                    var product = btnItem.parentElement
+                    var productImg = product.querySelector("img").src
+                    var productName = product.querySelector("H1").innerText
+                    var productPrice = product.querySelector("span").innerText
+
+                    addcart(productPrice, productImg, productName)
+
+                }
+            })
+
+        })
+        function addcart(productPrice, productImg, productName) {
+            var addtr = document.createElement("tr")
+            var cartItem = document.querySelectorAll("tbody tr")
+            for (var i = 0; i < cartItem.length; i++) {
+                var productT = document.querySelectorAll(".title")
+                if (productT[i].innerHTML == productName) {
+                    alert("Sản phẩm của bạn đã có trong giỏ hàng")
+                    return
+                }
+            }
+            var trcontent = '<tr><td style="display: flex; align-items: center;"><img style="width:70px" src=' + productImg + ' alt=""><span class="title">' + productName + '</span></td><td><p><span class="prices">' + productPrice + '</span><sup>đ</sup></p></td><td><input style="width: 30px;outline: none;" type="number" value="1" min="1"></td><td style="cursor: pointer;"><span class="cart-delete">Xóa</span></td></tr>';
+            addtr.innerHTML = trcontent;
+            var cartTable = document.querySelector("tbody");
+
+            cartTable.append(addtr);
+            carttotal();
+            deleteCart();
+
+
+        }
+        //---------------------totalprice----------------------------
+        function carttotal() {
+            var cartItem = document.querySelectorAll("tbody tr")
+            var totalC = 0
+            // console.log(cartItem.length)
+            for (var i = 0; i < cartItem.length; i++) {
+                var inputValue = cartItem[i].querySelector("input").value
+                // console.log(inputValue)
+                var productPrice = cartItem[i].querySelector(".prices").innerHTML
+                // console.log(productPrice)
+                totalA = inputValue * productPrice * 1000
+                // totalB = totalA.toLocaleString("de-DE")
+                // console.log(totalB)
+                totalC = totalC + totalA
+                // totalD =totalC.toLocaleString("de-DE")
+            }
+            var cartTotalA = document.querySelector(".price-total span")
+            var cartPrice = document.querySelector(".cart-icon span")
+            cartTotalA.innerHTML = totalC.toLocaleString("de-DE")
+            cartPrice.innerHTML = totalC.toLocaleString("de-DE")
+            inputchange()
+            // console.log(cartTotalA)
+        }
+        //---------------------Deletet cart----------------------------
+        function deleteCart() {
+            var cartItem = document.querySelectorAll("tbody tr")
+            for (var i = 0; i < cartItem.length; i++) {
+                var productT = document.querySelectorAll(".cart-delete")
+                productT[i].addEventListener("click", function (event) {
+                    var cartDelete = event.target
+                    var cartitemR = cartDelete.parentElement.parentElement
+                    cartitemR.remove()
+                    carttotal()
+                    // console.log(cartitemR)
+                })
+
+            }
+        }
+        function inputchange() {
+            var cartItem = document.querySelectorAll("tbody tr")
+            for (var i = 0; i < cartItem.length; i++) {
+                var inputValue = cartItem[i].querySelector("input")
+                inputValue.addEventListener("change", function () {
+                    carttotal()
+                })
+
+            }
+        }
+        const cartbtn = document.querySelector(".fa-times")
+        const cartshow = document.querySelector(".fa-shopping-cart")
+        cartshow.addEventListener("click", function () {
+            console.log(cartshow)
+            document.querySelector(".cart").style.right = "0"
+        })
+        cartbtn.addEventListener("click", function () {
+            console.log(cartshow)
+            document.querySelector(".cart").style.right = "-100%"
+        })
+
+
+    </script>

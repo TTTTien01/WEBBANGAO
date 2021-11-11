@@ -6,24 +6,27 @@
         <form name="ttw" id="ttw-form" method="post" action="#">
             <div id="wrapping" class="clearfix">
                 <section id="aligned">
-					<div class="box-lienhe">
-						<div><input type="text" name="name" id="name" placeholder="Họ Tên" autocomplete="off" tabindex="1" class="txtinput" autofocus>
-</div>
-
-						<input type="email" name="email" id="email" placeholder="Email" autocomplete="off" tabindex="2" class="txtinput" autofocus>
-
-						<input type="tel" name="telephone" id="telephone" placeholder="Số điện thoại" tabindex="4" class="txtinput" autofocus>
-
-						<input type="text" name="diachi" id="diachi" placeholder="Địa chỉ" autocomplete="off" tabindex="3" class="txtinput" autofocus>
-
-						<textarea name="message" id="message" placeholder="Nội dung ..." tabindex="5" class="txtblock"></textarea>
-
-						<section id="buttons">
-							<input type="submit" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="Gửi nhanh">
-							<br style="clear:both;">
-						</section>
-
-					</div>
+				    <div class="box" style="">
+                            <div class="box-item">
+                                <h1 class="title">Thông tin liên hệ</h1>  
+                            </div>
+                           <div class="box-item">
+                                <asp:TextBox ID="txthoten" class="control" runat="server" placeholder="Họ Tên"></asp:TextBox> 
+                            </div>
+                    
+                            <div class="box-item">
+                                 <asp:TextBox ID="txtemail" class="control" TextMode="Email" runat="server" placeholder="Email"></asp:TextBox>
+                            </div>
+                            <div class="box-item">
+                            <asp:TextBox ID="txtsdt" TextMode="Number" class="control" runat="server" placeholder="Số điện thoại"></asp:TextBox>
+                            </div>
+                            <div class="box-item">
+                            <asp:TextBox ID="txtnoidung" class="control" runat="server" Height="94px" Width="376px" placeholder="Nội dung liên hệ"></asp:TextBox>
+                            </div>
+                             <div class="box-item">
+                               <asp:Button ID="submitbtn" runat="server" Text="Đặt hàng" OnClick="submitbtn_Click" Height="41px"/>
+                            </div>        
+                 </div>
                     <div id="prioritycase">
                         <h3>Gạo Sạch | Mua bán gạo trực tuyến</h3>
                         <b>Mọi thắc mắc xin vui lòng liên hệ: </b>

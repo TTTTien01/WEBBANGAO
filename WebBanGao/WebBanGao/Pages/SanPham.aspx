@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LayoutSP.Master" AutoEventWireup="true" CodeBehind="SanPham.aspx.cs" Inherits="WebBanGao.Pages.SanPham" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="SanPham.aspx.cs" Inherits="WebBanGao.Pages.SanPham" %>
 <%@ Register src="../userUI/SanPham.ascx" tagname="SanPham" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

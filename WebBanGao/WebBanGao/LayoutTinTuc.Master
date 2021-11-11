@@ -5,6 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" href="Resource/Source/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="Resource/Source/GioHang.js"></script>
+    <script src="https://kit.fontawesome.com/e380915d7d.js" crossorigin="anonymous"></script>
+
     <title>Tin Tức - Gạo Sạch | Mua Bán Gạo Trực Tuyến</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -16,7 +22,7 @@
             <p id="p1">CHÀO MỪNG QUÝ KHÁCH ĐẾN VỚI SIÊU THỊ GẠO &emsp; <b>GỌI ĐẶT HÀNG: </b> 0898.999.707</p>
         </marquee>
     </div>
-    <div class="text-center">
+    <div class="text-center1">
         <a href="../Pages/index.aspx"><img id="img1" src="../Resource/Images/logo.jpg" /></a>
         <div class="anh"></div>
         <p id="p2">Tinh Hoa Đất Trời</p>
@@ -73,7 +79,11 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a href="../Pages/LienHe.aspx">LIÊN HỆ</a></li>
-                <li class="nav-item"><a href="../Pages/GioHang.aspx">GIỎ HÀNG</a></li>
+                <li class="nav-item"><a href="../Pages/GioHang.aspx">
+                    <div class="cart-icon">
+        <p><i class="fas fa-shopping-cart"></i><span>0</span><sup>đ</sup></p>
+    </div>
+                                     </a></li>
             </ul>
         </nav>
     </div>
@@ -81,7 +91,7 @@
     <!-- dmục bài viết-->
 
 
-    <div id="dssk">
+    <div id="dssk" >
         <ul id="dropdown">
             <br>
             <div id="e">Danh Mục Bài Viết</div>
@@ -134,19 +144,10 @@
 
 
     <div class="timeline">
-        <!--chuyen trang-->
-        <div class="pagination">
-            <a href="#">«</a>
-            <a class="active" href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">»</a>
-        </div>
-        <!---->
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-    <div id="footer">
+    <div id="footer" style="position:relative; right:0px">
         <div class="container table">
             <div class="col">
                 <h3>Bảng giá gạo <i style="     font-weight: normal;     font-size: 13px;     letter-spacing: 1px; ">(22/10/2021)</i></h3>

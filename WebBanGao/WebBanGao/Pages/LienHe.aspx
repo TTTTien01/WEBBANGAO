@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="LienHe.aspx.cs" Inherits="WebBanGao.Pages.LienHe" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="LienHe.aspx.cs" Inherits="WebBanGao.Pages.LienHe" EnableEventValidation="False"  %>
 <%@ Register src="../userUI/LienHe.ascx" tagname="LienHe" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
