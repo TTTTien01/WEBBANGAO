@@ -69,6 +69,15 @@
     <Content Include="LayoutSP.Master" />
     <Content Include="Layout.Master" />
     <Content Include="LayoutTinTuc.Master" />
+<<<<<<< HEAD
+=======
+    <Content Include="LayoutSP.Master" />
+    <Content Include="QLBanGao.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLBanGao.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+>>>>>>> 8ad6a3b15971c165d5dc6a7641200f07b6c7472c
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -259,10 +268,21 @@
       <DependentUpon>TinTuc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="QLbangao.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLbangao.dbml</DependentUpon>
+=======
+    <Compile Include="QLBanGao.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBanGao.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="userUI\G404.ascx.cs">
+      <DependentUpon>G404.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+>>>>>>> 8ad6a3b15971c165d5dc6a7641200f07b6c7472c
     </Compile>
     <Compile Include="userUI\ChiTietSP.ascx.cs">
       <DependentUpon>ChiTietSP.ascx</DependentUpon>
@@ -334,6 +354,14 @@
   <ItemGroup>
     <None Include="QLbangao.dbml.layout">
       <DependentUpon>QLbangao.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QLBanGao.dbml.layout">
+      <DependentUpon>QLBanGao.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>

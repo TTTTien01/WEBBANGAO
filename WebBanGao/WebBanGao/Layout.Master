@@ -5,11 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" href="Resource/Source/style.css"/>
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="Resource/Source/GioHang.js"></script>
     <script src="https://kit.fontawesome.com/e380915d7d.js" crossorigin="anonymous"></script>
+=======
+
+>>>>>>> 8ad6a3b15971c165d5dc6a7641200f07b6c7472c
 
     <title>Gạo Sạch | Mua Bán Gạo Trực Tuyến</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -64,7 +68,10 @@
                                 %>
                         <li><a href="../Pages/TinNganhGao.aspx"><%=ListDanhmucTinTuc[i].TenDanhMucTT %></a></li>
                         <% }%>
+<<<<<<< HEAD
                         
+=======
+>>>>>>> 8ad6a3b15971c165d5dc6a7641200f07b6c7472c
                     </ul>
                 </li>
                 <li class="nav-item"><a href="../Pages/KhuyenMai.aspx">KHUYẾN MÃI</a>
